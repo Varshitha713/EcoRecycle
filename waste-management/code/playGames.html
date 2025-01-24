@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycling Challenge</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(226, 235, 145, 0.218);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background-color:  rgba(226, 235, 145, 0.035);
+            color: rgb(11, 11, 11);
+            padding: 20px;
+        }
+
+        .game-container {
+            margin: 20px auto;
+            max-width: 900px;
+            height: 500px;
+            margin-bottom: 50px;
+        }
+
+        .bins {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .bin {
+            width: 150px;
+            height: 150px;
+            border: 2px dashed #4CAF50;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .bin.correct {
+            border-color: #4CAF50;
+            background-color: #eaffea;
+        }
+
+        .bin.incorrect {
+            border-color: red;
+            background-color: #ffeaea;
+        }
+
+        .items {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: grab;
+        }
+
+        .points {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .game-container{
+            margin-top: 100px;
+           background-color: rgba(0, 255, 255, 0.221);
+           transition: transform 0.3s ease;
+           border-radius: 3%;
+           
+        }
+        .game-container:hover {
+    box-shadow: 5px 8px 20px rgba(53, 53, 58, 0.855);
+    transform: scale(1.01);
+}
+
+    </style>
+</head>
+<body>
+
+    
+    <header>
+        <h1 style="font-family: serif; padding-top: 50px;padding-bottom: 10px; font-size: 60px;">Recycling Challenge</h1>
+        <p style="font-family: serif;font-size: 18px;">Drag and drop items into the correct bins to earn points!</p>
+    </header>
+<div class="game">
+    <div class="game-container">
+        <h2 style="margin-bottom: 50px; padding-top:50px ; font-family:serif;">Your Points: <span id="points" class="points">0</span></h2>
+
+        <div class="bins" style="margin-bottom: 70px;">
+            <div class="bin" id="plastic-bin"style="display: flex;flex-direction: column; "><img src="../plastic.jpg" alt="" srcset="" width="80px" height="70px" style="border-radius:10%;"><h2>Plastic</h2></div>
+            <div class="bin" id="paper-bin"style="display: flex;flex-direction: column;"><img src="../paper.jpg" alt="" srcset=""width="80px" height="70px"  style="border-radius:10%;"><h2>Paper</h2></div>
+            <div class="bin" id="organic-bin"style="display: flex;flex-direction: column;"><img src="../organic.jpg" alt="" srcset="" width="80px" height="70px" style="border-radius:10%;"><h2>Organic</h2></div>
+        </div>
+
+        <div class="items">
+            <div class="item" draggable="true" data-bin="plastic" style="display: flex;flex-direction: column; gap:20px; justify-content: center;align-items: center;"><img src="../bottle.jpg" alt="" srcset="" width="40px" height="40px" style="border-radius:20%;"><h2 style="font-size: 10px; "><b>Plastic Bottle</b></h2></div>
+            <div class="item" draggable="true" data-bin="paper"style="display: flex;flex-direction: column;gap:20px;justify-content: center;align-items: center;"><img src="../newspaper.jpg" alt="" srcset="" width="40px" height="40px"style="border-radius:10%;"><h2 style="font-size: 10px;">Newspaper</h2></div>
+            <div class="item" draggable="true" data-bin="organic"style="display: flex;flex-direction: column;gap:20px;justify-content: center;align-items: center;"><img src="../appleCore.jpg" alt="" srcset="" width="40px" height="40px"style="border-radius:10%;"><h2 style="font-size: 10px;">Apple Core</h2></div>
+            <div class="item" draggable="true" data-bin="plastic"style="display: flex;flex-direction: column;gap:20px;justify-content: center;align-items: center;"><img src="../plasticBag.jpg" alt="" srcset="" width="40px" height="40px "style="border-radius:10%;"><h2 style="font-size: 10px;">Plastic Bag</h2></div>
+            <div class="item" draggable="true" data-bin="paper"style="display: flex;flex-direction: column;gap:20px;justify-content: center;align-items: center;"><img src="../cardboard.jpg" alt="" srcset="" width="40px" height="40px"style="border-radius:10%;"><h2 style="font-size: 10px;">Cardboard</h2></div>
+            <div class="item" draggable="true" data-bin="organic"style="display: flex;flex-direction: column;gap:20px;justify-content: center;align-items: center;"><img src="../banana.jpg" alt="" srcset="" width="40px" height="40px"style="border-radius:10%;"><h2 style="font-size: 10px; ">Banana Peel</h2></div>
+        </div>
+    </div>
+</div>
+    
+
+    <script>
+        let points = 0;
+
+        // Select all bins and items
+        const bins = document.querySelectorAll('.bin');
+        const items = document.querySelectorAll('.item');
+        const pointsDisplay = document.getElementById('points');
+
+        // Drag and drop functionality
+        items.forEach(item => {
+            item.addEventListener('dragstart', dragStart);
+        });
+
+        bins.forEach(bin => {
+            bin.addEventListener('dragover', dragOver);
+            bin.addEventListener('drop', drop);
+        });
+
+        function dragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.dataset.bin);
+            e.dataTransfer.setData('text/id', e.target.innerText);
+        }
+
+        function dragOver(e) {
+            e.preventDefault(); // Allows the drop
+        }
+
+        function drop(e) {
+            e.preventDefault();
+            const correctBin = e.dataTransfer.getData('text/plain');
+            const draggedItem = e.dataTransfer.getData('text/id');
+
+            if (e.target.id.includes(correctBin)) {
+                points += 10;
+                e.target.classList.add('correct');
+                setTimeout(() => e.target.classList.remove('correct'), 1000);
+                alert(`✅ Correct! '${draggedItem}' goes to '${correctBin.toUpperCase()} Bin'`);
+
+            } else {
+                points -= 5;
+                e.target.classList.add('incorrect');
+                setTimeout(() => e.target.classList.remove('incorrect'), 1000);
+                alert("❌ Incorrect! Try again.");
+
+            }
+
+            pointsDisplay.innerText = points;
+
+            // Remove item after correct placement
+            if (e.target.id.includes(correctBin)) {
+                document.querySelector(`.item[data-bin="${correctBin}"]`).remove();
+
+            }
+        }
+    </script>
+</body>
+</html>

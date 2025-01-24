@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewards & Badges | Plastic Waste Management</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #2ecc71;
+            --secondary-blue: #3498db;
+            --accent-red: #e74c3c;
+            --soft-background: #f4f6f7;
+        }
+
+        body {
+            background-color: var(--soft-background);
+            font-family: 'Arial', sans-serif;
+        }
+        #navbar1{
+    box-shadow: 0 5px 5px rgba(114, 105, 241, 0.519);
+  
+}
+
+
+        .navbar {
+            background-color: var(--primary-green);
+           
+        }
+        .logo-container img {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 60px;
+            height: 90px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .rewards-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        .points-card {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-blue));
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap:15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .points-card:hover {
+            transform: scale(1.05);
+        }
+
+        .reward-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .reward-category:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .badge-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .digital-badge {
+            text-align: center;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .digital-badge:hover {
+            background-color: #e9ecef;
+            transform: scale(1.05);
+        }
+
+        .certification-card {
+            background-color: #f1f8ff;
+            border-left: 5px solid var(--secondary-blue);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .modal-badge {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        .rows{
+            margin-left: 50px;
+            display: flex;
+            gap:200px;
+        }
+     
+    </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark" id="navbar1" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+    <div class="container">
+        <div class="logo-container">
+            <img src="./image2.png" alt="RecycleRewards Logo" class="mb-0" style="max-height: 44px;">
+        </div>
+        <a class="navbar-brand" href="#" style="font-size: 1.9rem;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Eco Recycle</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="./profile.html" style="font-size: 20px;">My Profile</a></li>
+                
+                <li class="nav-item"><a class="nav-link" href="upcoming_events.html"style="font-size: 20px;">Events</a></li>
+                
+                <li class="nav-item"><a class="nav-link" href="#rewards"style="font-size: 20px;">Rewards</a></li>
+                <li class="nav-item"><a class="nav-link" href="./playGames.html"style="font-size: 20px;">Play Games</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container rewards-container">
+        <!-- Points Section -->
+        <section id="points-section" class="mb-5">
+            <h2 class="text-center mb-4" style="font-family:serif;"><b>Your Eco-Impact Points</b></h2>
+            <div class="points-card">
+                <h3 style="font-size: 30px; font-family:serif;">Total Points: <span id="total-points">1,250</span></h3>
+                <p style="font-size: 25px;font-family:serif;">Your contributions are making a difference!</p>
+                
+                <div class="row mt-4" >
+                    <div class="rows">
+                    <div class="col-md-4">
+                        <button class="btn btn-light w-100" data-bs-toggle="modal" data-bs-target="#couponModal">
+                            Redeem Coupons
+                        </button>
+                    </div>
+                    <div class="col-md-4" >
+                        <button class="btn btn-light w-100" data-bs-toggle="modal" data-bs-target="#donationModal">
+                            Donate Points
+                        </button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eco-Friendly Product Rewards -->
+        <section id="product-rewards" class="mb-5">
+            <h2 class="text-center mb-4" style="font-family:serif;"><b>Eco-Friendly Product Rewards</b></h2>
+            <div class="row" id="product-list">
+                
+            </div>
+        </section>
+
+        <!-- Digital Badges -->
+        <section id="digital-badges" class="mb-5">
+            <h2 class="text-center mb-4" style="font-family:serif;">Digital Badges & Achievements</h2>
+            <div class="badge-showcase" id="badge-container">
+                <!-- Badges will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Sustainability Certification -->
+        <section id="sustainability-cert" class="mb-5">
+            <h2 class="text-center mb-4" style="font-family:serif;">Sustainability Certifications</h2>
+            <div id="certification-container">
+                <!-- Certifications will be dynamically inserted here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Modals -->
+    <!-- Coupon Modal -->
+    <div class="modal fade" id="couponModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="font-family:serif;">Redeem Coupons</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="coupon-list">
+                    <!-- Coupons will be dynamically inserted -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Donation Modal -->
+    <div class="modal fade" id="donationModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="font-family:serif;">Donate Your Points</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="donation-list">
+                    <!-- Donation options will be dynamically inserted -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Badges Modal -->
+    <div class="modal fade" id="badgesModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" style="font-family:serif;">Your Earned Badges</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="badges-full-list">
+                    <!-- Full badge list will be dynamically inserted -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Dynamic Content Management
+        document.addEventListener('DOMContentLoaded', function() {
+            // Eco-Friendly Product Rewards
+            const productList = [
+                { name: 'Reusable Shopping Bag', points: 250, image: 'img4.jpg' },
+                { name: 'Bamboo Toothbrush Set', points: 150, image: 'img3.jpg' },
+                { name: 'Compostable Kitchenware Set', points: 500, image: 'img2.jpg' },
+                { name: 'Stainless Steel Straw Kit', points: 100, image: 'img1.jpg' }
+            ];
+
+            const productContainer = document.getElementById('product-list');
+            productList.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'col-md-3 mb-3';
+                productCard.innerHTML = `
+                    <div class="reward-category text-center">
+                       
+                        <h5>${product.name}</h5>
+                        <p>${product.points} Points</p>
+                        <button class="btn btn-primary btn-sm" onclick="redeemProduct('${product.name}', ${product.points})">Redeem</button>
+                    </div>
+                `;
+                productContainer.appendChild(productCard);
+            });
+
+            // Digital Badges
+            const badges = [
+                { name: 'Plastic Warrior', description: 'Recycled 50kg of Plastic', icon: 'shield' },
+                { name: 'Eco Hero', description: '10 Consecutive Recycling Months', icon: 'leaf' },
+                { name: 'Community Champion', description: 'Participated in 5 Cleanup Events', icon: 'trophy' }
+            ];
+
+            const badgeContainer = document.getElementById('badge-container');
+            badges.forEach(badge => {
+                const badgeElement = document.createElement('div');
+                badgeElement.className = 'digital-badge';
+                badgeElement.innerHTML = `
+                    <i class="fas fa-${badge.icon} fa-3x mb-3"></i>
+                    <h5>${badge.name}</h5>
+                    <p>${badge.description}</p>
+                `;
+                badgeContainer.appendChild(badgeElement);
+            });
+
+            // Sustainability Certifications
+            const certifications = [
+                { 
+                    level: 'Bronze', 
+                    requirement: 'Recycled 100kg of Plastic', 
+                    description: 'Demonstrates initial commitment to sustainability'
+                },
+                { 
+                    level: 'Silver', 
+                    requirement: 'Recycled 250kg of Plastic', 
+                    description: 'Significant contribution to environmental conservation'
+                }
+            ];
+
+            const certContainer = document.getElementById('certification-container');
+            certifications.forEach(cert => {
+                const certCard = document.createElement('div');
+                certCard.className = 'certification-card mb-3';
+                certCard.innerHTML = `
+                    <h4>${cert.level} Sustainability Certification</h4>
+                    <p>${cert.requirement}</p>
+                    <small>${cert.description}</small>
+                `;
+                certContainer.appendChild(certCard);
+            });
+
+            // Coupon List
+            const couponList = [
+                { name: '20% Off Eco-Friendly Products', points: 100 },
+                { name: 'Free Recycling Kit', points: 250 }
+            ];
+
+            const couponContainer = document.getElementById('coupon-list');
+            couponList.forEach(coupon => {
+                const couponElement = document.createElement('div');
+                couponElement.className = 'mb-3';
+                couponElement.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span>${coupon.name}</span>
+                        <button class="btn btn-success btn-sm" onclick="redeemCoupon('${coupon.name}', ${coupon.points})">
+                            Redeem (${coupon.points} pts)
+                        </button>
+                    </div>
+                `;
+                couponContainer.appendChild(couponElement);
+            });
+        });
+
+        // Redemption Functions
+        function redeemProduct(productName, points) {
+            const currentPoints = parseInt(document.getElementById('total-points').textContent.replace(',', ''));
+            if (currentPoints >= points) {
+                alert(`Successfully redeemed ${productName}!`);
+                document.getElementById('total-points').textContent = (currentPoints - points).toLocaleString();
+            } else {
+                alert('Not enough points to redeem this product.');
+            }
+        }
+
+        function redeemCoupon(couponName, points) {
+            const currentPoints = parseInt(document.getElementById('total-points').textContent.replace(',', ''));
+            if (currentPoints >= points) {
+                alert(`Successfully redeemed coupon: ${couponName}`);
+                document.getElementById('total-points').textContent = (currentPoints - points).toLocaleString();
+            } else {
+                alert('Not enough points to redeem this coupon.');
+            }
+        }
+    </script>
+</body>
+</html>
