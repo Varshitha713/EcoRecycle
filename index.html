@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plastic Waste Management</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2ecc70;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+#navbar1{
+    box-shadow: 0 5px 5px rgba(114, 105, 241, 0.519);
+  
+}
+
+
+        .navbar {
+            background-color: var(--primary-color);
+           
+        }
+        .logo-container img {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            width: 60px;
+            height: 90px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(46, 204, 113, 0.8), rgba(52, 152, 219, 0.8)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%232ecc71" fill-opacity="0.3" d="M0,160L48,176C96,192,192,224,288,229.3C384,235,480,213,576,186.7C672,160,768,128,864,133.3C960,139,1056,181,1152,202.7C1248,224,1344,224,1392,224L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0L192,0L96,0L0,0Z"></path></svg>');
+            background-size: cover;
+            color: white;
+            padding: 100px  0;
+            text-align: center;
+            
+            
+        }
+
+       
+.hero-section h1 {
+    font-size: 80px;
+    height: 500px;
+    padding-top: 50px;
+   
+}
+
+.hero-section .lead {
+    font-size: 27px;
+   
+}
+
+.hero-section p:last-of-type {
+    font-size: 30px;
+  
+}
+
+        .container0{
+            background: linear-gradient( rgba(52, 152, 219, 0.745),rgba(46, 204, 113, 0.8)), 
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%232ecc71" fill-opacity="0.3" d="M0,160L48,176C96,192,192,224,288,229.3C384,235,480,213,576,186.7C672,160,768,128,864,133.3C960,139,1056,181,1152,202.7C1248,224,1344,224,1392,224L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0L192,0L96,0L0,0Z"></path></svg>');
+                        background-size: cover;
+                        height: 500px;
+                        
+                        
+                    }
+
+        .pickup-section{
+            border-radius: 2%;
+            padding-top: 40px;
+            padding-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            transition: transform 0.3s ease;
+        }
+
+     .rewards-section, .testimonial-section {
+           
+        }
+        .rewards-section{
+            
+        }
+        .pickup-section:hover {
+    box-shadow: 5px 8px 20px rgba(28, 14, 222, 0.855);
+    transform: scale(1.01);
+}
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-top: 80px;
+            
+        }
+
+        .badge {
+            text-align: center;
+            background-color: #0c0c0c;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .badge:hover {
+            transform: scale(1.05);
+        }
+
+        .carousel-item img {
+           border-top-left-radius: 30%;
+           border-bottom-right-radius: 30%;
+            max-width: 150px;
+            margin: 0 auto;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            background-color: #1f5a3dcb;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" id="navbar1" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+        <div class="container" >
+            <div class="logo-container">
+                <img src="../image2.png" alt="RecycleRewards Logo" class="mb-0" style="max-height: 44px;">
+            </div>
+            <a class="navbar-brand" href="#" style="font-size: 1.9rem;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Eco Recycle</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="./profile.html" style="font-size: 20px;">My Profile</a></li>
+                                       <li class="nav-item"><a class="nav-link" href="./upcoming_events.html"style="font-size: 20px;">Events</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="./rewards-section.html"style="font-size: 20px;">Rewards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./playGames.html"style="font-size: 20px;">Play Games</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 style="font-family:monospace;">Transform Plastic Waste<br> Transform Lives <br><br>
+                <p class="lead"  style="line-height: 40px;letter-spacing: 2px; font-family: serif;">
+                    Join our mission to create a sustainable future through responsible recycling and community engagement.
+                    Track your plastic recycling habits, earn rewards, and compete on leaderboards while making a positive
+                    impact in your community.
+                </p></h1><br>
+            
+            <p style="color: rgba(0, 0, 0, 0.371);"><b>Plastic Waste Management </b></p>
+        </div>
+    </section>
+
+    <!-- Pickup Section -->
+     <div class="dropdown" style="background-color: rgba(52, 152, 219, 0.8); text-align: center;">
+
+
+        <section id="pickup" class="pickup-section container" style="background-color: rgba(52, 152, 219, 0.8);">
+            <h2 class="text-center mb-4" ><b>Schedule Your Plastic Pickup</b></h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <select id="pickupLocation" class="form-select">
+                        <option selected>Select Pickup Location</option>
+                        <option value="current">Current Location</option>
+                        <option value="street">Street Pickup</option>
+                        <option value="roadside">Roadside Collection</option>
+                        <option value="other">Other Location</option>
+                    </select>
+                    <div id="locationDetails" class="mt-3" style="display:none;">
+                        <input type="text" class="form-control" placeholder="Enter Specific Location Details">
+                    </div>
+                    <div class="mt-3">
+                        <label for="plasticWeight" class="form-label"><b>Enter Plastic Weight (in kg):</b></label>
+                        <input type="number" id="plasticWeight" class="form-control" placeholder="e.g., 2, 5, 10">
+                    </div>   <div style="padding-top: 30px;">
+                    <button class="btn btn-primary mt-3" onclick="schedulePickup()">Schedule Now</button></div>
+                </div>
+            </div>
+        
+        <script>
+            // Show location details input if 'Other Location' is selected
+            document.getElementById('pickupLocation').addEventListener('change', function () {
+                const locationDetails = document.getElementById('locationDetails');
+                if (this.value === 'other') {
+                    locationDetails.style.display = 'block';
+                } else {
+                    locationDetails.style.display = 'none';
+                }
+            });
+        
+            // Schedule pickup with constraints on weight
+            function schedulePickup() {
+                const weightInput = document.getElementById('plasticWeight');
+                const weight = parseFloat(weightInput.value);
+        
+                if (isNaN(weight)) {
+                    alert('Please enter a valid weight.');
+                    return;
+                }
+        
+                if (weight < 2) {
+                    alert('Plastic weight must be at least 2kg to schedule a pickup.');
+                } else {
+                    alert('Pickup scheduled successfully!');
+                    // Add any additional logic for successful scheduling here
+                }
+            }
+        </script>
+    </section>
+</div>
+    <!-- Rewards & Badges Section -->
+   
+    <section class="rewards-section bg-light"  id="container2">
+        <div class="container0"  >
+            <h2 class="text-center mb-5" style="padding-top: 80px;"><b>Your Recycling Rewards</b></h2>
+            <div class="badge-container">
+                <div class="badge">
+                    <i class="fas fa-trophy fa-3x text-warning"></i><br><br><br>
+                    <h4>Green Hero</h4><br>
+                    <p>10 Successful Pickups</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-leaf fa-3x text-success"></i><br><br><br>
+                    <h4>Eco Warrior</h4><br>
+                    <p>25 kg Plastic Recycled</p>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-globe fa-3x text-info"></i><br><br><br>
+                    <h4>Planet Protector</h4><br>
+                    <p>50 kg Plastic Recycled</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonial-section"style="background-color: rgba(46, 204, 113, 0.8); ">
+        <div class="container">
+            <h2 class="text-center mb-5"><b>Community Voices</b></h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" >
+                    <div class="carousel-item active">
+                        <div class="text-center" >
+                            <img src="../men.jpg" alt="Testimonial" class="mb-3" width="300px" height="120px">
+                            <blockquote class="blockquote">
+                                <p style="width: 600px; margin-left:350px ;">"This platform has made recycling so easy and rewarding! I never knew how simple it could be to manage plastic waste until I joined this community.
+                                     Thanks to this initiative, I've reduced my plastic footprint significantly"</p><br>
+                                <footer class="blockquote-footer">Sarah Johnson</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <img src="../women.jpg" alt="Testimonial" class="mb-3" width="300px" height="120px" >
+                            <blockquote class="blockquote">
+                                <p style="width: 600px; margin-left:350px ;">"I love how I can track my environmental impact and earn rewards. I love how this platform connects me with local recycling options! It's inspiring to see how many people are committed to reducing plastic waste. "</p><br>
+                                <footer class="blockquote-footer">Mike Rodriguez</footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-center" style="height: 250px; ">
+        <div class="container" >
+            <div class="row">
+                <div class="col-12">
+                    <p style="font-size: 30px; padding-top: 40px;">&copy; 2024 Eco Recycle. All Rights Reserved.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-white mx-2" ><i class="fab fa-facebook" style="width: 30px ;height:30px;"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p class="mt-3" style="font-size:20px ;">Contact: info@plasticwastemanagement.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('pickupLocation').addEventListener('change', function() {
+            const locationDetails = document.getElementById('locationDetails');
+            locationDetails.style.display = this.value === 'other' ? 'block' : 'none';
+        });
+
+        function schedulePickup() {
+            const location = document.getElementById('pickupLocation').value;
+            let message;
+
+            switch(location) {
+                case 'current':
+                    message = 'Pickup scheduled at your current location';
+                    break;
+                case 'street':
+                    message = 'Street pickup scheduled';
+                    break;
+                case 'roadside':
+                    message = 'Roadside collection scheduled';
+                    break;
+                case 'other':
+                    const details = document.querySelector('#locationDetails input').value;
+                    message = `Pickup scheduled at: ${details}`;
+                    break;
+                default:
+                    message = 'Please select a location';
+            }
+
+            alert(message);
+        }
+    </script>
+</body>
+</html>
